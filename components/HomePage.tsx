@@ -3,6 +3,35 @@ import { Chatbot } from './Chatbot';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations, Professor, Floor, DepartmentCategory, DepartmentItem } from '../data/translations';
 
+// Custom hook for scroll-triggered animations
+const useScrollAnimation = () => {
+  const [elements, setElements] = useState<HTMLElement[]>([]);
+  
+  useEffect(() => {
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+
+    return () => elements.forEach(el => observer.unobserve(el));
+  }, [elements]);
+
+  const refCallback = (el: HTMLElement | null) => {
+    if (el && !elements.some(e => e === el)) {
+      setElements(prev => [...prev, el]);
+    }
+  };
+  
+  return refCallback;
+};
 
 const LanguageSwitcher: React.FC = () => {
     const { language, setLanguage } = useLanguage();
@@ -78,13 +107,13 @@ const MapModal: React.FC<{ floor: Floor; onClose: () => void, t: any }> = ({ flo
 
     return (
         <div 
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 transition-opacity duration-300"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300"
             onClick={onClose}
             aria-modal="true"
             role="dialog"
         >
             <div 
-                className="bg-gray-800 rounded-lg shadow-2xl w-full max-w-4xl h-full max-h-[85vh] flex flex-col relative overflow-hidden"
+                className="bg-gray-800/80 backdrop-blur-lg border border-cyan-500/20 rounded-lg shadow-2xl w-full max-w-4xl h-full max-h-[85vh] flex flex-col relative overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 <header className="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
@@ -137,13 +166,13 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 transition-opacity duration-300"
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300"
       onClick={onClose}
       aria-modal="true"
       role="dialog"
     >
       <div
-        className="bg-gray-800 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col relative"
+        className="bg-gray-800/80 backdrop-blur-lg border border-cyan-500/20 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col relative"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
@@ -206,8 +235,8 @@ const DetailModal: React.FC<{ item: DepartmentItem; onBack: () => void; onClose:
   const fwdArrow = <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-gray-800 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-gray-800/80 backdrop-blur-lg border border-cyan-500/20 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
         <header className="flex justify-between items-center p-4 border-b border-gray-700">
           <button onClick={onBack} className="text-gray-400 hover:text-white flex items-center">
              <span className={language === 'fa' ? 'ml-2' : 'mr-2'}>{language === 'fa' ? fwdArrow : backArrow}</span>
@@ -256,8 +285,8 @@ const CategoryModal: React.FC<{ category: DepartmentCategory; onSelectItem: (ite
   }, [onClose]);
   
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-gray-800 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-gray-800/80 backdrop-blur-lg border border-cyan-500/20 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
         <header className="flex justify-between items-center p-4 border-b border-gray-700">
           <h3 className="text-xl font-semibold text-cyan-300">{category.title}</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-white" aria-label={t.closeAria}>
@@ -281,6 +310,16 @@ const CategoryModal: React.FC<{ category: DepartmentCategory; onSelectItem: (ite
   );
 };
 
+const SectionDivider: React.FC = () => (
+  <div className="overflow-hidden">
+    <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" style={{ fill: '#1f2937', width: '130%', height: 150, transform: 'translateY(5px)'}}>
+        <path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".25" />
+        <path d="M0 0v150h1200V0h-27.35c-20.8 0-37.6 16.8-37.6 37.6 0 20.8 16.8 37.6 37.6 37.6s37.6-16.8 37.6-37.6c0-20.8-16.8-37.6-37.6-37.6zM600 0c-20.8 0-37.6 16.8-37.6 37.6 0 20.8 16.8 37.6 37.6 37.6s37.6-16.8 37.6-37.6C637.6 16.8 620.8 0 600 0zM1162.4 0c-20.8 0-37.6 16.8-37.6 37.6s16.8 37.6 37.6 37.6 37.6-16.8 37.6-37.6c0-20.8-16.8-37.6-37.6-37.6z" opacity=".5" />
+        <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 122.49-16.77 186.23-17.7 65.81-1.02 130.83 5.37 196.46 14.83 65.62 9.45 131.25 21.84 198.86 21.84V0z" />
+    </svg>
+  </div>
+);
+
 interface HomePageProps {
   onEnterWorld: () => void;
 }
@@ -290,6 +329,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
   const [selectedProfessor, setSelectedProfessor] = useState<Professor | null>(null);
   const [activeCategory, setActiveCategory] = useState<DepartmentCategory | null>(null);
   const [activeItem, setActiveItem] = useState<DepartmentItem | null>(null);
+  const animatedRef = useScrollAnimation();
 
   const { language } = useLanguage();
   const t = translations[language];
@@ -326,22 +366,29 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
   
   return (
     <div className="bg-gray-900 text-gray-200 min-h-screen font-sans">
+      <style>{`
+        .animated-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .animated-section.is-visible { opacity: 1; transform: translateY(0); }
+        .card-3d { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-3d:hover { transform: perspective(1000px) rotateY(var(--rotate-y, 0)) rotateX(var(--rotate-x, 0)) scale3d(1.05, 1.05, 1.05); }
+      `}</style>
       
       {/* Hero Section */}
       <header 
         className="relative h-screen flex items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1614726365953-53131ada455b?q=80&w=2670&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2671&auto=format&fit=crop')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <LanguageSwitcher />
         <div className="relative z-10 p-4">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4">{home.heroTitle}</h1>
-          <p className="text-xl md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>{home.heroTitle}</h1>
+          <p className="text-xl md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             {home.heroSubtitle}
           </p>
           <button 
             onClick={onEnterWorld}
-            className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg shadow-cyan-500/30"
+            className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg shadow-cyan-500/30 animate-fade-in-up animate-subtle-pulse"
+            style={{ animationDelay: '0.6s' }}
           >
             {home.heroButton}
           </button>
@@ -352,22 +399,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* About Section */}
-          <section className="text-center py-20">
+          <section ref={animatedRef} className="text-center py-20 animated-section">
              <h2 className="text-3xl font-bold text-cyan-400 mb-4">{home.aboutTitle}</h2>
             <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
               {home.aboutText}
             </p>
           </section>
 
+          <SectionDivider />
+
           {/* Announcements Section */}
-          <section className="py-20 bg-gray-800/50 rounded-xl">
+          <section ref={animatedRef} className="py-20 bg-gray-800/50 rounded-xl animated-section" style={{transitionDelay: '200ms'}}>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-cyan-400">{home.announcementsTitle}</h2>
               <p className="text-lg text-gray-400 mt-2">{home.announcementsSubtitle}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {t.announcements.map((item, index) => (
-                <div key={index} className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2">
+                <div key={index} className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20">
                   <div className="text-4xl mb-4">{item.icon}</div>
                   <h3 className="font-semibold text-xl text-white mb-2">{item.title}</h3>
                   <p className="text-cyan-400">{item.date}</p>
@@ -375,9 +424,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
               ))}
             </div>
           </section>
+          
+          <SectionDivider />
 
           {/* Department Sections */}
-          <section className="py-20">
+          <section ref={animatedRef} className="py-20 animated-section" style={{transitionDelay: '200ms'}}>
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-cyan-400">{home.sectionsTitle}</h2>
                 <p className="text-lg text-gray-400 mt-2">{home.sectionsSubtitle}</p>
@@ -387,17 +438,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
                 <button 
                   key={category.title} 
                   onClick={() => setActiveCategory(category)}
-                  className="w-full text-center bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center aspect-square transition-all duration-300 transform hover:scale-105 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500"
+                  className="w-full text-center bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center aspect-square transition-all duration-300 transform hover:scale-105 hover:bg-cyan-900/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
                   >
-                  <div className="text-5xl mb-4">{category.icon}</div>
+                  <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{category.icon}</div>
                   <h3 className="font-semibold text-md text-white">{category.title}</h3>
                 </button>
               ))}
             </div>
           </section>
 
+          <SectionDivider />
+
           {/* Professors Section */}
-          <section className="py-20 bg-gray-800/50 rounded-xl">
+          <section ref={animatedRef} className="py-20 bg-gray-800/50 rounded-xl animated-section" style={{transitionDelay: '200ms'}}>
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-cyan-400">{home.professorsTitle}</h2>
                 <p className="text-lg text-gray-400 mt-2">{home.professorsSubtitle}</p>
@@ -407,9 +460,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
                 <button 
                   key={prof.name} 
                   onClick={() => setSelectedProfessor(prof)}
-                  className="w-full text-center bg-gray-800 p-6 rounded-lg flex flex-col items-center transition-all duration-300 transform hover:scale-105 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500"
+                  className="card-3d group w-full text-center bg-gray-800 p-6 rounded-lg flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500"
+                  onMouseMove={(e) => {
+                     const rect = e.currentTarget.getBoundingClientRect();
+                     const x = e.clientX - rect.left - rect.width / 2;
+                     const y = e.clientY - rect.top - rect.height / 2;
+                     e.currentTarget.style.setProperty('--rotate-x', `${-y / 20}deg`);
+                     e.currentTarget.style.setProperty('--rotate-y', `${x / 20}deg`);
+                  }}
+                  onMouseLeave={(e) => {
+                     e.currentTarget.style.setProperty('--rotate-x', '0deg');
+                     e.currentTarget.style.setProperty('--rotate-y', '0deg');
+                  }}
                   >
-                  <div className="w-24 h-24 bg-cyan-500 rounded-full flex items-center justify-center text-4xl font-bold text-gray-900 flex-shrink-0 mb-4">
+                  <div className="w-24 h-24 bg-cyan-500 rounded-full flex items-center justify-center text-4xl font-bold text-gray-900 flex-shrink-0 mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-400/50">
                     {prof.initials}
                   </div>
                   <div>
@@ -421,8 +485,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
             </div>
           </section>
           
+          <SectionDivider />
+          
           {/* Map and Chatbot Section */}
-          <section className="py-20">
+          <section ref={animatedRef} className="py-20 animated-section" style={{transitionDelay: '200ms'}}>
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                   <div className="lg:col-span-2">
                     <h2 className="text-3xl font-bold text-cyan-400 mb-4">{home.mapTitle}</h2>
@@ -443,7 +509,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-3 bg-gray-800 rounded-xl shadow-2xl flex flex-col h-[600px]">
+                  <div className="lg:col-span-3 bg-gray-800/80 backdrop-blur-lg border border-cyan-500/20 rounded-xl shadow-2xl flex flex-col h-[600px]">
                      <div className="p-6 border-b border-gray-700">
                         <h2 className="text-2xl font-semibold text-cyan-300">{home.chatbotTitle}</h2>
                      </div>
