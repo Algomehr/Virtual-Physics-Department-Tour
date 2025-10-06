@@ -1,0 +1,5 @@
+{
+  "name": "Virtual Physics Department Tour",
+  "description": "A virtual tour of a university's Physics Department. Features a comprehensive home page with department information, announcements, a faculty list, a 2D map, and an AI chatbot. Also includes a fully immersive 3D first-person explorer to navigate the department building, built with React and Three.js.",
+  "requestFramePermissions": []
+}
