@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { GoogleGenAI, Type } from '@google/genai';
 import { Chatbot } from './Chatbot';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations, Professor, Floor, DepartmentCategory, DepartmentItem } from '../data/translations';
@@ -154,6 +155,10 @@ const MapModal: React.FC<{ floor: Floor; onClose: () => void, t: any }> = ({ flo
 };
 
 const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: any }> = ({ professor, onClose, t }) => {
+  const [pubs, setPubs] = useState<any[] | null>(null);
+  const [pubError, setPubError] = useState<string | null>(null);
+  const [isFetchingPubs, setIsFetchingPubs] = useState(true);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -163,6 +168,71 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
+
+  useEffect(() => {
+    if (!professor) return;
+
+    const fetchPublications = async () => {
+        setIsFetchingPubs(true);
+        setPubs(null);
+        setPubError(null);
+
+        try {
+            if (!process.env.API_KEY) {
+                throw new Error("API key is not configured.");
+            }
+            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
+            const responseSchema = {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    title: { 
+                      type: Type.STRING,
+                      description: "The full title of the publication."
+                    },
+                    journal: { 
+                      type: Type.STRING,
+                      description: "The name of the journal or conference where it was published."
+                    },
+                    year: { 
+                      type: Type.INTEGER,
+                      description: "The year of publication."
+                    }
+                  },
+                  required: ["title", "journal", "year"],
+                }
+            };
+            
+            const prompt = `Please list the 5 most recent and significant scientific publications by professor ${professor.name}, who is a specialist in ${professor.area}.`;
+
+            const response = await ai.models.generateContent({
+                model: "gemini-2.5-flash",
+                contents: prompt,
+                config: {
+                    responseMimeType: "application/json",
+                    responseSchema: responseSchema,
+                },
+            });
+
+            const publications = JSON.parse(response.text);
+
+            if (publications && Array.isArray(publications) && publications.length > 0) {
+                setPubs(publications);
+            } else {
+                setPubError(t.noPubsFound);
+            }
+        } catch (error) {
+            console.error("Error fetching publications:", error);
+            setPubError(t.pubFetchError);
+        } finally {
+            setIsFetchingPubs(false);
+        }
+    };
+
+    fetchPublications();
+  }, [professor, t.noPubsFound, t.pubFetchError]);
 
   return (
     <div
@@ -200,9 +270,29 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-2 text-cyan-300 border-b border-gray-700 pb-1">{t.pubsTitle}</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-300 pr-4 rtl:pl-4 rtl:pr-0">
-                {professor.publications.map((pub, index) => <li key={index}>{pub}</li>)}
-              </ul>
+              {isFetchingPubs && (
+                <div className="space-y-3 animate-pulse" aria-label={t.loadingPubs}>
+                  {[...Array(3)].map((_, i) => (
+                    <div key={i} className="py-2">
+                      <div className="h-4 bg-gray-600 rounded w-3/4 mb-2"></div>
+                      <div className="h-3 bg-gray-700 rounded w-1/2"></div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {pubError && !isFetchingPubs && (
+                <p className="text-gray-400">{pubError}</p>
+              )}
+              {!isFetchingPubs && !pubError && pubs && (
+                <ul className="list-disc list-inside space-y-3 text-gray-300 pr-4 rtl:pl-4 rtl:pr-0">
+                  {pubs.map((pub, index) => (
+                    <li key={index}>
+                      <span className="font-semibold text-white">{pub.title}</span>
+                      <span className="block text-sm text-cyan-400 mt-1">{pub.journal} ({pub.year})</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-2 text-cyan-300 border-b border-gray-700 pb-1">{t.contactTitle}</h4>

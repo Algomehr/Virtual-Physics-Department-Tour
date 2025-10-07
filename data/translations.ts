@@ -49,7 +49,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'm.bagheri@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت راست',
         },
       },
       {
@@ -60,7 +60,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'm.hajimahmoodzadeh@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت چپ',
         },
       },
       {
@@ -71,7 +71,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'a.khorsandi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -82,7 +82,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'rokni@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -93,7 +93,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'r.talebi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -104,7 +104,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'amooshahi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -115,7 +115,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'hfallah@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، سمت راست',
         },
       },
       {
@@ -126,7 +126,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'ghanbari@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -137,7 +137,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'ghavami@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت راست',
         },
       },
       {
@@ -159,7 +159,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'm.malekmohammad@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، سمت راست',
         },
       },
       {
@@ -170,7 +170,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'a.mahdifar@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، انتهای راهرو سمت چپ',
         },
       },
       {
@@ -181,7 +181,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'mhnaderi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -192,7 +192,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'msn.amini@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، ابتدای راهرو سمت راست',
         },
       },
       {
@@ -203,7 +203,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'e.bolhasani@phys.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت راست',
         },
       },
       {
@@ -214,7 +214,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'sjalali@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت چپ',
         },
       },
       {
@@ -225,7 +225,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'rashedi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی دوم، سمت چپ',
         },
       },
       {
@@ -236,7 +236,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'a.lohrasebi@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت چپ',
         },
       },
       {
@@ -247,7 +247,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'mozafari@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، انتهای راهرو سمت راست',
         },
       },
       {
@@ -258,7 +258,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'z.nourbakhsh@sci.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش جنوبی، راهروی دوم، سمت راست',
         },
       },
       {
@@ -291,7 +291,7 @@ const fa = {
         publications: [],
         contact: {
           email: 'a.ayoobian@ast.ui.ac.ir',
-          office: 'دانشکده فیزیک',
+          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت راست',
         },
       }
   ],
@@ -380,7 +380,7 @@ const fa = {
   - ۲ عدد تلسکوپ ۸ اینچ نیوتنی Celestron
 - **سایر تجهیزات:** ۱ عدد دستگاه نورسنج نجومی و ۱ عدد دوربین عکس‌برداری CCD مستهلک
         `.trim(),
-          gallery: [ { src: 'https://images.unsplash.com/photo-1534289842477-2a29c1b5a8a1?q=80&w=800', alt: 'نمای نزدیک از تلسکوپ اصلی رصدخانه' }, { src: 'https://images.unsplash.com/photo-1610479136279-d576a17f4115?q=80&w=800', alt: 'گنبد رصدخانه در شب' } ]
+          gallery: [ { src: 'https://images.unsplash.com/photo-1534289842477-2a29c1b5a8a1?q=80&w=800', alt: 'نمای نزدیک از تلسکوپ اصلی رصدخانه' }, { src: 'https://images.unsplash.com/photo-16104791BODc2NTg?q=80&w=800', alt: 'گنبد رصدخانه در شب' } ]
         }
       ]
     },
@@ -463,6 +463,9 @@ const fa = {
     emailLabel: "ایمیل:",
     officeLabel: "دفتر:",
     backButton: "بازگشت",
+    noPubsFound: "مقاله جدیدی یافت نشد.",
+    pubFetchError: "در حال حاضر امکان دریافت مقالات وجود ندارد.",
+    loadingPubs: "در حال بارگذاری مقالات...",
   },
   chatbot: {
     profDesc: "متخصص در",
@@ -524,7 +527,7 @@ const en = {
       publications: [],
       contact: {
         email: 'm.bagheri@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Right Side',
       },
     },
     {
@@ -535,7 +538,7 @@ const en = {
       publications: [],
       contact: {
         email: 'm.hajimahmoodzadeh@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Left Side',
       },
     },
     {
@@ -546,7 +549,7 @@ const en = {
       publications: [],
       contact: {
         email: 'a.khorsandi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -557,7 +560,7 @@ const en = {
       publications: [],
       contact: {
         email: 'rokni@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -568,7 +571,7 @@ const en = {
       publications: [],
       contact: {
         email: 'r.talebi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -579,7 +582,7 @@ const en = {
       publications: [],
       contact: {
         email: 'amooshahi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -590,7 +593,7 @@ const en = {
       publications: [],
       contact: {
         email: 'hfallah@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, Right Side',
       },
     },
     {
@@ -601,7 +604,7 @@ const en = {
       publications: [],
       contact: {
         email: 'ghanbari@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -612,7 +615,7 @@ const en = {
       publications: [],
       contact: {
         email: 'ghavami@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Right Side',
       },
     },
     {
@@ -634,7 +637,7 @@ const en = {
       publications: [],
       contact: {
         email: 'm.malekmohammad@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, Right Side',
       },
     },
     {
@@ -645,7 +648,7 @@ const en = {
       publications: [],
       contact: {
         email: 'a.mahdifar@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, End of Hallway (Left)',
       },
     },
     {
@@ -656,7 +659,7 @@ const en = {
       publications: [],
       contact: {
         email: 'mhnaderi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, Left Side',
       },
     },
     {
@@ -667,7 +670,7 @@ const en = {
       publications: [],
       contact: {
         email: 'msn.amini@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, Beginning of Hallway (Right)',
       },
     },
     {
@@ -678,7 +681,7 @@ const en = {
       publications: [],
       contact: {
         email: 'e.bolhasani@phys.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Right Side',
       },
     },
     {
@@ -689,7 +692,7 @@ const en = {
       publications: [],
       contact: {
         email: 'sjalali@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Left Side',
       },
     },
     {
@@ -700,7 +703,7 @@ const en = {
       publications: [],
       contact: {
         email: 'rashedi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, Second Corridor, Left Side',
       },
     },
     {
@@ -711,7 +714,7 @@ const en = {
       publications: [],
       contact: {
         email: 'a.lohrasebi@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Left Side',
       },
     },
     {
@@ -722,7 +725,7 @@ const en = {
       publications: [],
       contact: {
         email: 'mozafari@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, End of Hallway (Right)',
       },
     },
     {
@@ -733,7 +736,7 @@ const en = {
       publications: [],
       contact: {
         email: 'z.nourbakhsh@sci.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, South Section, Second Corridor, Right Side',
       },
     },
     {
@@ -766,7 +769,7 @@ const en = {
       publications: [],
       contact: {
         email: 'a.ayoobian@ast.ui.ac.ir',
-        office: 'Physics Department',
+        office: 'Third Floor, North Section, First Corridor, Right Side',
       },
     }
   ],
@@ -938,6 +941,9 @@ The site is supported by two UPS units (10 kVA and 6 kVA) and two cooling units.
     emailLabel: 'Email:',
     officeLabel: 'Office:',
     backButton: 'Back',
+    noPubsFound: "No recent publications found.",
+    pubFetchError: "Could not fetch publications at this time.",
+    loadingPubs: "Loading publications...",
   },
   chatbot: {
     profDesc: 'specializing in',
