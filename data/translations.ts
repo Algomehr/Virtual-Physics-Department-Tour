@@ -302,10 +302,10 @@ const fa = {
   ],
   floors: [
       { name: 'زیرزمین', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Basement+Map' },
-      { name: 'طبقه همکف', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Ground+Floor+Map' },
-      { name: 'طبقه اول', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=First+Floor+Map' },
-      { name: 'طبقه دوم', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Second+Floor+Map' },
-      { name: 'طبقه سوم', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Third+Floor+Map' },
+      { name: 'طبقه همکف', imageUrl: '/public/Floor one.png' },
+      { name: 'طبقه اول', imageUrl: '/public/Floor Two.png' },
+      { name: 'طبقه دوم', imageUrl: '/public/Floor Three.png' },
+      { name: 'طبقه سوم', imageUrl: '/public/Floor Four.png' },
       { name: 'رصدخانه', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Observatory+Map' },
   ],
   departmentSections: [
@@ -780,10 +780,10 @@ const en = {
   ],
   floors: [
     { name: 'Basement', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Basement+Map' },
-    { name: 'Ground Floor', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Ground+Floor+Map' },
-    { name: 'First Floor', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=First+Floor+Map' },
-    { name: 'Second Floor', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Second+Floor+Map' },
-    { name: 'Third Floor', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Third+Floor+Map' },
+    { name: 'Ground Floor', imageUrl: '/public/Floor one.png' },
+    { name: 'First Floor', imageUrl: '/public/Floor Two.png' },
+    { name: 'Second Floor', imageUrl: '/public/Floor Three.png' },
+    { name: 'Third Floor', imageUrl: '/public/Floor Four.png' },
     { name: 'Observatory', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Observatory+Map' },
   ],
   departmentSections: [

@@ -5,7 +5,7 @@ import { useFirstPersonControls } from '../hooks/useFirstPersonControls';
 declare const THREE: any;
 
 export const Scene = forwardRef<HTMLCanvasElement>((props, ref) => {
-  // FIX: Pass the forwarded ref to the useFirstPersonControls hook. The error "Expected 1 arguments, but got 0" indicates it was called without arguments.
+  // Fix: Pass the canvas ref to the useFirstPersonControls hook, which expects it as an argument.
   const { camera, updateControls } = useFirstPersonControls(ref);
   const modelRef = useRef<any>();
 
