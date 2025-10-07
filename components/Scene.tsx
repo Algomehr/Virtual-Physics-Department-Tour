@@ -1,16 +1,19 @@
 import React, { useRef, useEffect, forwardRef } from 'react';
-import { useFirstPersonControls } from '../hooks/useFirstPersonControls';
 
 // Since three.js is from a CDN, we declare it globally for TypeScript
 declare const THREE: any;
 
-export const Scene = forwardRef<HTMLCanvasElement>((props, ref) => {
-  // Fix: Pass the canvas ref to the useFirstPersonControls hook, which expects it as an argument.
-  const { camera, updateControls } = useFirstPersonControls(ref);
-  const modelRef = useRef<any>();
+interface SceneProps {
+    camera: any; // THREE.PerspectiveCamera is not available as a type here
+    updateControls: (delta: number) => void;
+}
+
+export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, updateControls }, ref) => {
+  // FIX: Initialize useRef with null to satisfy linter rule which expects an argument.
+  const modelRef = useRef<any>(null);
 
   useEffect(() => {
-    if (!ref || typeof ref === 'function' || !ref.current) return;
+    if (!ref || typeof ref === 'function' || !ref.current || !camera) return;
     
     const canvas = ref.current;
     
@@ -223,7 +226,7 @@ export const Scene = forwardRef<HTMLCanvasElement>((props, ref) => {
         renderer.dispose();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); 
+  }, [ref, camera, updateControls]); 
 
   // ... (rest of the component)
   

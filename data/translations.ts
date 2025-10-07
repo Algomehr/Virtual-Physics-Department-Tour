@@ -503,6 +503,7 @@ const fa = {
   worldView: {
     title: "کاوشگر دنیای سه بعدی",
     instruction: "برای ورود و کنترل دوربین کلیک کنید.",
+    touchInstruction: "برای حرکت از نیمه چپ و برای نگاه کردن از نیمه راست صفحه استفاده کنید.",
     controlsTitle: "کنترل ها",
     mouse: "ماوس",
     look: "نگاه به اطراف",
@@ -981,6 +982,7 @@ Be friendly and informative. Always respond in English.
   worldView: {
     title: "3D World Explorer",
     instruction: "Click to enter and control the camera.",
+    touchInstruction: "Use the left half of the screen to move and the right half to look.",
     controlsTitle: "Controls",
     mouse: "Mouse",
     look: "Look Around",
