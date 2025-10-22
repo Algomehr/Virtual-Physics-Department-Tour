@@ -1,3 +1,4 @@
+
 export interface Professor {
   name: string;
   area: string;
@@ -8,12 +9,6 @@ export interface Professor {
     email: string;
     office: string;
   };
-}
-
-export interface Announcement {
-    title: string;
-    date: string;
-    icon: string;
 }
 
 export interface Floor {
@@ -207,17 +202,6 @@ const fa = {
         },
       },
       {
-        name: 'دکتر سعید جلالی اسدآبادی',
-        area: 'فیزیک ماده چگال',
-        initials: 'سج',
-        bio: 'دکتر سعید جلالی اسدآبادی عضو هیئت علمی گروه فیزیک ماده چگال است. ایشان مدرک دکتری خود را در رشته فیزیک از دانشگاه صنعتی اصفهان در سال ۱۳۸۱، کارشناسی ارشد را در رشته فیزیک هسته‌ای در سال ۱۳۷۷ و کارشناسی را در رشته فیزیک کاربردی در سال ۱۳۷۰ از همان دانشگاه دریافت کرده‌اند.',
-        publications: [],
-        contact: {
-          email: 'sjalali@sci.ui.ac.ir',
-          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت چپ',
-        },
-      },
-      {
         name: 'دکتر غلامرضا راشدی',
         area: 'فیزیک ماده چگال',
         initials: 'غر',
@@ -282,70 +266,53 @@ const fa = {
           email: 'h.yavary@sci.ui.ac.ir',
           office: 'دانشکده فیزیک',
         },
-      },
-      {
-        name: 'دکتر نوید ایوبیان',
-        area: 'مهندسی هسته‌ای',
-        initials: 'نا',
-        bio: 'دکتر نوید ایوبیان، استادیار دانشکده، مدرک دکترای خود را در رشته مهندسی هسته‌ای از دانشگاه شیراز در سال ۱۳۹۰ دریافت کرده‌اند.',
-        publications: [],
-        contact: {
-          email: 'a.ayoobian@ast.ui.ac.ir',
-          office: 'طبقه سوم، بخش شمالی، راهروی اول، سمت راست',
-        },
       }
   ],
-  announcements: [
-    { title: 'سمینار هفتگی: «ماده تاریک و انرژی تاریک»', date: '۲۵ تیر ۱۴۰۳', icon: '🗓️' },
-    { title: 'آغاز ثبت‌نام دوره‌های کارشناسی ارشد', date: 'از ۱ مرداد ۱۴۰۳', icon: '🎓' },
-    { title: 'کارگاه عملی «آشنایی با تلسکوپ‌های فضایی»', date: '۱۰ مرداد ۱۴۰۳', icon: '🔭' },
-  ],
   floors: [
-      { name: 'زیرزمین', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Basement+Map' },
       { name: 'طبقه همکف', imageUrl: '/public/Floor one.png' },
       { name: 'طبقه اول', imageUrl: '/public/Floor Two.png' },
       { name: 'طبقه دوم', imageUrl: '/public/Floor Three.png' },
       { name: 'طبقه سوم', imageUrl: '/public/Floor Four.png' },
-      { name: 'رصدخانه', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Observatory+Map' },
   ],
   departmentSections: [
     {
       title: 'آزمایشگاه‌ها', icon: '🔬', description: 'مجهزترین آزمایشگاه‌ها برای تحقیقات پیشرفته در فیزیک.',
       items: [
-        { name: 'آزمایشگاه فیزیک پایه یک', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پایه یک' }] },
-        { name: 'آزمایشگاه فیزیک پایه دو', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پایه دو' }] },
-        { name: 'آزمایشگاه فیزیک پایه سه', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پایه سه' }] },
-        { name: 'آزمایشگاه فیزیک پایه چهار', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پایه چهار' }] },
-        { name: 'آزمایشگاه اپتیک', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه اپتیک' }] },
-        { name: 'آزمایشگاه لیزر', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه لیزر' }] },
-        { name: 'آزمایشگاه لیزر تحقیقاتی', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه لیزر تحقیقاتی' }] },
-        { name: 'آزمایشگاه حالت جامد', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه حالت جامد' }] },
-        { name: 'آزمایشگاه هسته‌ای', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه هسته‌ای' }] },
-        { name: 'آزمایشگاه نانوفوتونیک', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه نانوفوتونیک' }] },
-        { name: 'آزمایشگاه فیزیک پیشرفته (حالت جامد)', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پیشرفته (حالت جامد)' }] },
-        { name: 'آزمایشگاه فیزیک پیشرفته (اتمی مولکولی)', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه فیزیک پیشرفته (اتمی مولکولی)' }] },
-        { name: 'آزمایشگاه شیمی هسته‌ای', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه شیمی هسته‌ای' }] },
-        { name: 'آزمایشگاه گداخت', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه گداخت' }] },
-        { name: 'آزمایشگاه پلاسما', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه پلاسما' }] },
-        { name: 'آزمایشگاه آشکارسازی', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه آشکارسازی' }] },
-        { name: 'آزمایشگاه سمولاتور راکتور', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه سمولاتور راکتور' }] },
-        { name: 'آزمایشگاه الکترونیک هسته‌ای', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه الکترونیک هسته‌ای' }] },
-        { name: 'آزمایشگاه پرتوپزشکی', description: 'اطلاعات تکمیلی در مورد این آزمایشگاه به زودی اضافه خواهد شد.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'آزمایشگاه پرتوپزشکی' }] }
+        { name: 'آزمایشگاه حالت جامد', description: 'واقع در طبقه اول، راهروی جنوبی. این آزمایشگاه به بررسی خواص فیزیکی مواد در حالت جامد می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه حالت جامد' }] },
+        { name: 'آزمایشگاه فیزیک پایه ۱', description: 'واقع در طبقه اول، راهروی جنوبی. این آزمایشگاه برای انجام آزمایش‌های بنیادی مکانیک، حرارت و الکتریسیته طراحی شده است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه فیزیک پایه ۱' }] },
+        { name: 'آزمایشگاه فیزیک پایه ۲', description: 'واقع در طبقه اول، راهروی جنوبی. این آزمایشگاه مکمل فیزیک پایه ۱ بوده و به مباحث پیشرفته‌تر مغناطیس و موج می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه فیزیک پایه ۲' }] },
+        { name: 'آزمایشگاه اپتیک', description: 'واقع در طبقه اول، راهروی شمالی. در این آزمایشگاه، پدیده‌های مرتبط با نور و برهمکنش آن با ماده مطالعه می‌شود.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه اپتیک' }] },
+        { name: 'آزمایشگاه آموزشی الکترواپتیک', description: 'واقع در طبقه اول، راهروی شمالی. این فضا برای آموزش مباحث ترکیبی الکترونیک و اپتیک استفاده می‌شود.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه آموزشی الکترواپتیک' }] },
+        { name: 'آزمایشگاه اسپکتروسکوپی', description: 'واقع در طبقه اول، راهروی شمالی. این آزمایشگاه به تحلیل طیف الکترومغناطیسی مواد برای شناسایی ساختار آن‌ها اختصاص دارد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه اسپکتروسکوپی' }] },
+        { name: 'آزمایشگاه نجوم', description: 'واقع در طبقه اول، راهروی شمالی. فضایی برای انجام مشاهدات و پروژه‌های عملی مرتبط با نجوم.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه نجوم' }] },
+        { name: 'آزمایشگاه آموزشی اپتیک و لیزر', description: 'واقع در طبقه اول، راهروی شمالی. این آزمایشگاه به آموزش اصول اپتیک و کاربردهای لیزر می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه آموزشی اپتیک و لیزر' }] },
+        { name: 'آزمایشگاه آموزشی لیزر', description: 'واقع در طبقه اول، راهروی شمالی. تمرکز این آزمایشگاه بر روی آموزش عملی کار با انواع لیزرها است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه آموزشی لیزر' }] },
+        { name: 'آزمایشگاه فیزیک جدید', description: 'واقع در طبقه دوم، راهروی جنوبی. در این آزمایشگاه، مفاهیم مدرن فیزیک مانند کوانتوم و نسبیت به صورت عملی بررسی می‌شود.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه فیزیک جدید' }] },
+        { name: 'آزمایشگاه فیزیک ۳', description: 'واقع در طبقه دوم، راهروی جنوبی. این آزمایشگاه به مباحث پیشرفته فیزیک مانند الکترومغناطیس و موج می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه فیزیک ۳' }] },
+        { name: 'آزمایشگاه بیناب نمایی فروسرخ ۲', description: 'واقع در طبقه دوم، راهروی جنوبی. این آزمایشگاه برای تحلیل‌های طیف‌سنجی در ناحیه فروسرخ استفاده می‌شود.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه بیناب نمایی فروسرخ ۲' }] },
+        { name: 'آزمایشگاه بیناب نمایی فروسرخ ۱', description: 'واقع در طبقه دوم، راهروی جنوبی. این آزمایشگاه مکمل آزمایشگاه فروسرخ ۲ بوده و به کاربردهای دیگر این حوزه می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه بیناب نمایی فروسرخ ۱' }] },
+        { name: 'کارگاه برق ۲', description: 'واقع در طبقه دوم، راهروی شمالی. فضایی برای ساخت و تعمیر مدارهای الکتریکی پیشرفته.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کارگاه برق ۲' }] },
+        { name: 'کارگاه برق ۱', description: 'واقع در طبقه دوم، راهروی شمالی. این کارگاه به آموزش مبانی و مدارهای الکتریکی پایه اختصاص دارد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کارگاه برق ۱' }] },
+        { name: 'آزمایشگاه نانوفتونیک', description: 'واقع در طبقه دوم، راهروی شمالی. تحقیقات در این آزمایشگاه بر روی برهمکنش نور و ماده در مقیاس نانو متمرکز است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه نانوفتونیک' }] },
+        { name: 'آزمایشگاه لایه نشانی', description: 'واقع در طبقه دوم، راهروی شمالی. این آزمایشگاه به ایجاد لایه‌های نازک مواد بر روی سطوح مختلف می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه لایه نشانی' }] },
+        { name: 'آزمایشگاه تهیه مواد', description: 'واقع در طبقه دوم، راهروی شمالی. در این فضا، مواد و نمونه‌های مورد نیاز برای تحقیقات فیزیکی سنتز و آماده‌سازی می‌شوند.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه تهیه مواد' }] },
+        { name: 'آزمایشگاه حالت جامد (راهروی میانی)', description: 'واقع در راهروی میانی طبقه دوم (به سمت جنوب). این آزمایشگاه به بررسی خواص فیزیکی مواد در حالت جامد می‌پردازد.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آزمایشگاه حالت جامد (راهروی میانی)' }] },
+        { name: 'آونگ فوکو', description: 'واقع در راهروی میانی طبقه دوم (به سمت جنوب). این آونگ برای نمایش بصری چرخش زمین به کار می‌رود.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'آونگ فوکو' }] }
       ]
     },
     { title: 'کلاس‌های درس', icon: '🏛️', description: 'فضاهای آموزشی مدرن برای ارائه دروس نظری و تخصصی.',
       items: [
-        { name: 'کلاس درس ۱', description: 'این کلاس در طبقه دوم، راهروی میانی (بخش شمالی) قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۱' }] },
-        { name: 'کلاس درس ۲', description: 'این کلاس در طبقه دوم، راهروی میانی (بخش شمالی) قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۲' }] },
-        { name: 'کلاس درس ۳', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۳' }] },
-        { name: 'کلاس درس ۴', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۴' }] },
-        { name: 'کلاس درس ۵', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۵' }] },
-        { name: 'کلاس درس ۶', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۶' }] },
-        { name: 'کلاس درس ۷', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۷' }] },
-        { name: 'کلاس درس ۸', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۸' }] },
-        { name: 'کلاس درس ۹', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۹' }] },
-        { name: 'کلاس درس ۱۰', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۱۰' }] },
-        { name: 'کلاس درس ۱۱', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'کلاس درس مدرن شماره ۱۱' }] }
+        { name: 'کلاس درس ۱', description: 'این کلاس در طبقه دوم، راهروی میانی (بخش شمالی) قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۱' }] },
+        { name: 'کلاس درس ۲', description: 'این کلاس در طبقه دوم، راهروی میانی (بخش شمالی) قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۲' }] },
+        { name: 'کلاس درس ۳', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۳' }] },
+        { name: 'کلاس درس ۴', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۴' }] },
+        { name: 'کلاس درس ۵', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۵' }] },
+        { name: 'کلاس درس ۶', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۶' }] },
+        { name: 'کلاس درس ۷', description: 'این کلاس در طبقه همکف، راهروی جنوبی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۷' }] },
+        { name: 'کلاس درس ۸', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۸' }] },
+        { name: 'کلاس درس ۹', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۹' }] },
+        { name: 'کلاس درس ۱۰', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۱۰' }] },
+        { name: 'کلاس درس ۱۱', description: 'این کلاس در طبقه همکف، راهروی شمالی قرار دارد. مجهز به تجهیزات صوتی و تصویری مدرن برای برگزاری کلاس‌های تخصصی است.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس درس مدرن شماره ۱۱' }] }
       ]
     },
     { title: 'رصدخانه', icon: '🔭', description: 'رصد آسمان شب و انجام پروژه‌های نجومی با تلسکوپ‌های حرفه‌ای.',
@@ -380,7 +347,7 @@ const fa = {
   - ۲ عدد تلسکوپ ۸ اینچ نیوتنی Celestron
 - **سایر تجهیزات:** ۱ عدد دستگاه نورسنج نجومی و ۱ عدد دوربین عکس‌برداری CCD مستهلک
         `.trim(),
-          gallery: [ { src: 'https://images.unsplash.com/photo-1534289842477-2a29c1b5a8a1?q=80&w=800', alt: 'نمای نزدیک از تلسکوپ اصلی رصدخانه' }, { src: 'https://images.unsplash.com/photo-16104791BODc2NTg?q=80&w=800', alt: 'گنبد رصدخانه در شب' } ]
+          gallery: [ { src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'نمای نزدیک از تلسکوپ اصلی رصدخانه' }, { src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'گنبد رصدخانه در شب' } ]
         }
       ]
     },
@@ -391,44 +358,56 @@ const fa = {
 - یک سیستم Z840 با دو پردازنده ۱۲ هسته‌ای (مجموعاً ۲۴ هسته) و ۶۴ گیگابایت رم.
 - سیستم‌های متعدد با پردازنده‌های ۲، ۴ و ۶ هسته‌ای و رم‌های ۱۶ تا ۶۴ گیگابایت.
 این سایت توسط دو دستگاه UPS (۱۰ kVA و ۶ kVA) و دو دستگاه خنک‌کننده پشتیبانی می‌شود.`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1529336972124-31a834b6b1a8?q=80&w=800', alt: 'دانشجویان در حال کار در سایت کامپیوتر' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'دانشجویان در حال کار در سایت کامپیوتر' }]
         },
         { name: 'سایت پردازش سریع (طبقه اول)',
           description: 'یک سایت دومنظوره که شامل ۱۰ سیستم پردازش سریع برای محاسبات پژوهشی (پردازنده ۶ هسته‌ای، ۸ گیگابایت رم) و ۱۱ سیستم عمومی با نرم‌افزارهای کاربردی (پردازنده ۶ هسته‌ای، ۴ گیگابایت رم) می‌باشد.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1556742044-53c2a1a6c0c2?q=80&w=800', alt: 'اتاق کامپیوتر با چندین سیستم' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'اتاق کامپیوتر با چندین سیستم' }]
         },
         { name: 'اتاق سرور و کلاستر محاسباتی (طبقه اول)',
           description: `اتاق سرور دانشکده میزبان کلاستر محاسباتی اصلی است. این کلاستر از ۵ نود Tyan-FT48 تشکیل شده که هر کدام دارای ۴ پردازنده ۱۶ هسته‌ای AMD Opteron و ۱۲۸ گیگابایت رم DDR3 هستند. در حال حاضر، ۴ نود به صورت موازی تحت لینوکس کار می‌کنند و یک نود برای ارائه سرویس‌های مجازی‌سازی شده به دانشجویان استفاده می‌شود. برق اضطراری توسط یک دستگاه UPS قدرتمند ۲۰ kVA تامین می‌گردد.`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1581092446337-23428277981f?q=80&w=800', alt: 'رک‌های سرور در یک مرکز داده' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'رک‌های سرور در یک مرکز داده' }]
         },
         { name: 'سایت محاسباتی دانشجویان (طبقه اول)',
           description: `این سایت شامل ۱۲ سیستم قدرتمند است که به طور خاص در اختیار دانشجویان محاسباتی قرار دارد. مشخصات سیستم‌ها:
 - پردازنده: i9-12900kf
 - رم: 64GB DDR4
 - هارد: 512GB SSD`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1614099232631-45569978182b?q=80&w=800', alt: 'کامپیوترهای قدرتمند برای محاسبات' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کامپیوترهای قدرتمند برای محاسبات' }]
         },
         { name: 'سایت عمومی دانشجویان تحصیلات تکمیلی (طبقه اول)',
           description: 'یک سایت عمومی با ۱۲ سیستم کامپیوتری که برای استفاده عمومی دانشجویان تحصیلات تکمیلی و همچنین برگزاری کلاس‌های آموزشی مبتنی بر کامپیوتر طراحی شده است.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800', alt: 'کلاس کامپیوتر برای دانشجویان' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'کلاس کامپیوتر برای دانشجویان' }]
         },
         { name: 'اتاق فیبر نوری (طبقه همکف)',
           description: 'این اتاق محل قرارگیری تجهیزات اصلی شبکه و زیرساخت فیبر نوری دانشکده است و در طبقه همکف واقع شده است.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1580894742597-87bc8789db3d?q=80&w=800', alt: 'تجهیزات شبکه و فیبر نوری' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'تجهیزات شبکه و فیبر نوری' }]
         }
       ]
     },
     { title: 'سالن‌های همایش', icon: '🎤', description: 'برگزاری سمینارها، کنفرانس‌ها و رویدادهای علمی.',
       items: [
         { name: 'آمفی‌تئاتر اصلی', description: 'سالن همایش اصلی دانشکده با ظرفیت ۲۰۰ نفر، مجهز به سیستم‌های صوتی و تصویری پیشرفته برای برگزاری سمینارهای هفتگی، دفاعیه‌ها و کنفرانس‌های ملی و بین‌المللی است.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800', alt: 'سالن همایش بزرگ و خالی' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'سالن همایش بزرگ و خالی' }]
         }
       ]
     },
     { title: 'سالن‌های مطالعه', icon: '📚', description: 'محیطی آرام و مناسب برای مطالعه و پژوهش دانشجویان.',
       items: [
-        { name: 'کتابخانه تخصصی', description: 'کتابخانه دانشکده فیزیک شامل مجموعه‌ای غنی از کتاب‌ها، مجلات و منابع دیجیتال در تمامی شاخه‌های فیزیک است. سالن مطالعه آن محیطی آرام برای تمرکز و تحقیق فراهم می‌کند.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800', alt: 'قفسه‌های کتاب در کتابخانه' }]
+        { 
+          name: 'سالن مطالعه دانشجویان کارشناسی', 
+          description: 'واقع در طبقه همکف، راهروی شمالی. این سالن مطالعه فضایی آرام و مجهز برای دانشجویان دوره کارشناسی فراهم می‌کند.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'سالن مطالعه دانشجویان کارشناسی' }]
+        },
+        { 
+          name: 'سالن مطالعه ارشد خواهران', 
+          description: 'واقع در طبقه دوم، راهروی میانی به سمت جنوب. این فضا به صورت اختصاصی برای دانشجویان خواهر در مقطع کارشناسی ارشد طراحی شده است.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'سالن مطالعه ارشد خواهران' }]
+        },
+        { 
+          name: 'سالن مطالعه دکتری و پسادکتری', 
+          description: 'واقع در طبقه سوم. این سالن مطالعه محیطی تخصصی و آرام برای پژوهشگران و دانشجویان مقاطع دکتری و پسادکتری فراهم می‌آورد.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=تصویر+به+زودی', alt: 'سالن مطالعه دکتری و پسادکتری' }]
         }
       ]
     }
@@ -439,8 +418,6 @@ const fa = {
     heroButton: "ورود به بازدید سه بعدی",
     aboutTitle: "به دنیای فیزیک خوش آمدید",
     aboutText: "دانشکده فیزیک ما یکی از پیشروترین مراکز علمی در کشور است که با تکیه بر اساتید برجسته و امکانات پژوهشی مدرن، به تربیت نسل جدیدی از فیزیکدانان و محققان می‌پردازد. این دانشکده شامل بخش‌های مختلفی از جمله فیزیک نظری، فیزیک تجربی، نجوم و اخترفیزیک می‌باشد.",
-    announcementsTitle: "آخرین اخبار و اطلاعیه‌ها",
-    announcementsSubtitle: "از آخرین رویدادها و فرصت‌های دانشکده مطلع شوید.",
     sectionsTitle: "بخش‌های مختلف دانشکده",
     sectionsSubtitle: "با امکانات و فضاهای آموزشی و پژوهشی ما آشنا شوید.",
     professorsTitle: "با اساتید ما آشنا شوید",
@@ -480,9 +457,6 @@ const fa = {
 
 # بخش‌های مختلف دانشکده:
 {sectionsInfo}
-
-# آخرین اخبار و اطلاعیه‌ها:
-{announcementInfo}
     `.trim(),
     systemInstruction: `
 شما یک دستیار هوشمند و مفید برای دانشکده فیزیک هستید.
@@ -686,17 +660,6 @@ const en = {
       },
     },
     {
-      name: 'Dr. Saeed Jalali Asadabadi',
-      area: 'Condensed Matter Physics',
-      initials: 'SJ',
-      bio: 'Dr. Saeed Jalali Asadabadi is a faculty member of the Condensed Matter Physics group. He received his Ph.D. in Physics from Isfahan University of Technology in 2002, his M.Sc. in Nuclear Physics in 1998, and his B.Sc. in Applied Physics in 1991, all from the same university.',
-      publications: [],
-      contact: {
-        email: 'sjalali@sci.ui.ac.ir',
-        office: 'Third Floor, North Section, First Corridor, Left Side',
-      },
-    },
-    {
       name: 'Dr. Gholamreza Rashedi',
       area: 'Condensed Matter Physics',
       initials: 'GR',
@@ -761,70 +724,53 @@ const en = {
         email: 'h.yavary@sci.ui.ac.ir',
         office: 'Physics Department',
       },
-    },
-    {
-      name: 'Dr. Navid Ayoobian',
-      area: 'Nuclear Engineering',
-      initials: 'NA',
-      bio: 'Dr. Navid Ayoobian, an assistant professor at the department, received his Ph.D. in Nuclear Engineering from Shiraz University in 2011.',
-      publications: [],
-      contact: {
-        email: 'a.ayoobian@ast.ui.ac.ir',
-        office: 'Third Floor, North Section, First Corridor, Right Side',
-      },
     }
   ],
-  announcements: [
-    { title: 'Weekly Seminar: "Dark Matter and Dark Energy"', date: 'July 16, 2024', icon: '🗓️' },
-    { title: 'Registration for Master\'s Programs Begins', date: 'From July 22, 2024', icon: '🎓' },
-    { title: 'Workshop: "Introduction to Space Telescopes"', date: 'July 31, 2024', icon: '🔭' },
-  ],
   floors: [
-    { name: 'Basement', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Basement+Map' },
     { name: 'Ground Floor', imageUrl: '/public/Floor one.png' },
     { name: 'First Floor', imageUrl: '/public/Floor Two.png' },
     { name: 'Second Floor', imageUrl: '/public/Floor Three.png' },
     { name: 'Third Floor', imageUrl: '/public/Floor Four.png' },
-    { name: 'Observatory', imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Observatory+Map' },
   ],
   departmentSections: [
     {
       title: 'Laboratories', icon: '🔬', description: 'State-of-the-art laboratories for advanced physics research.',
       items: [
-        { name: 'Basic Physics Laboratory I', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Basic Physics Laboratory I' }] },
-        { name: 'Basic Physics Laboratory II', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Basic Physics Laboratory II' }] },
-        { name: 'Basic Physics Laboratory III', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Basic Physics Laboratory III' }] },
-        { name: 'Basic Physics Laboratory IV', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Basic Physics Laboratory IV' }] },
-        { name: 'Optics Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Optics Laboratory' }] },
-        { name: 'Laser Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Laser Laboratory' }] },
-        { name: 'Research Laser Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Research Laser Laboratory' }] },
-        { name: 'Solid State Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Solid State Laboratory' }] },
-        { name: 'Nuclear Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Nuclear Laboratory' }] },
-        { name: 'Nanophotonics Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Nanophotonics Laboratory' }] },
-        { name: 'Advanced Physics Laboratory (Solid State)', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Advanced Physics Laboratory (Solid State)' }] },
-        { name: 'Advanced Physics Laboratory (Atomic & Molecular)', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Advanced Physics Laboratory (Atomic & Molecular)' }] },
-        { name: 'Nuclear Chemistry Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Nuclear Chemistry Laboratory' }] },
-        { name: 'Fusion Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Fusion Laboratory' }] },
-        { name: 'Plasma Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Plasma Laboratory' }] },
-        { name: 'Detection Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Detection Laboratory' }] },
-        { name: 'Reactor Simulator Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Reactor Simulator Laboratory' }] },
-        { name: 'Nuclear Electronics Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Nuclear Electronics Laboratory' }] },
-        { name: 'Medical Radiation Laboratory', description: 'Further information about this laboratory will be added soon.', gallery: [{ src: 'https://images.unsplash.com/photo-1581093583449-c8a73228d6c8?q=80&w=800', alt: 'Medical Radiation Laboratory' }] }
+        { name: 'Solid State Laboratory', description: 'Located on the first floor, south corridor. This lab focuses on studying the physical properties of materials in their solid state.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Solid State Laboratory' }] },
+        { name: 'Basic Physics Laboratory 1', description: 'Located on the first floor, south corridor. Designed for fundamental experiments in mechanics, heat, and electricity.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Basic Physics Laboratory 1' }] },
+        { name: 'Basic Physics Laboratory 2', description: 'Located on the first floor, south corridor. A continuation of Basic Physics 1, covering more advanced topics in magnetism and waves.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Basic Physics Laboratory 2' }] },
+        { name: 'Optics Laboratory', description: 'Located on the first floor, north corridor. This lab is for studying phenomena related to light and its interaction with matter.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Optics Laboratory' }] },
+        { name: 'Educational Electro-Optics Laboratory', description: 'Located on the first floor, north corridor. A space for teaching combined topics in electronics and optics.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Educational Electro-Optics Laboratory' }] },
+        { name: 'Spectroscopy Laboratory', description: 'Located on the first floor, north corridor. Dedicated to analyzing the electromagnetic spectrum of materials to identify their structure.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Spectroscopy Laboratory' }] },
+        { name: 'Astronomy Laboratory', description: 'Located on the first floor, north corridor. A space for conducting observations and practical projects related to astronomy.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Astronomy Laboratory' }] },
+        { name: 'Educational Optics and Laser Laboratory', description: 'Located on the first floor, north corridor. This lab is dedicated to teaching the principles of optics and laser applications.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Educational Optics and Laser Laboratory' }] },
+        { name: 'Educational Laser Laboratory', description: 'Located on the first floor, north corridor. The focus of this lab is on practical training with various types of lasers.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Educational Laser Laboratory' }] },
+        { name: 'Modern Physics Laboratory', description: 'Located on the second floor, south corridor. In this lab, modern physics concepts like quantum mechanics and relativity are explored experimentally.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Physics Laboratory' }] },
+        { name: 'Physics 3 Laboratory', description: 'Located on the second floor, south corridor. This lab deals with advanced physics topics such as electromagnetism and waves.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Physics 3 Laboratory' }] },
+        { name: 'Infrared Spectroscopy Laboratory 2', description: 'Located on the second floor, south corridor. Used for spectroscopic analysis in the infrared region.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Infrared Spectroscopy Laboratory 2' }] },
+        { name: 'Infrared Spectroscopy Laboratory 1', description: 'Located on the second floor, south corridor. Complements the Infrared Spectroscopy 2 lab, focusing on other applications in this field.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Infrared Spectroscopy Laboratory 1' }] },
+        { name: 'Electrical Workshop 2', description: 'Located on the second floor, north corridor. A space for building and repairing advanced electrical circuits.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Electrical Workshop 2' }] },
+        { name: 'Electrical Workshop 1', description: 'Located on the second floor, north corridor. This workshop is dedicated to teaching the fundamentals and basic electrical circuits.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Electrical Workshop 1' }] },
+        { name: 'Nanophotonics Laboratory', description: 'Located on the second floor, north corridor. Research in this lab focuses on the interaction of light and matter at the nanoscale.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Nanophotonics Laboratory' }] },
+        { name: 'Thin Film Deposition Laboratory', description: 'Located on the second floor, north corridor. This lab is dedicated to creating thin layers of materials on various substrates.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Thin Film Deposition Laboratory' }] },
+        { name: 'Materials Preparation Laboratory', description: 'Located on the second floor, north corridor. In this space, materials and samples needed for physics research are synthesized and prepared.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Materials Preparation Laboratory' }] },
+        { name: 'Solid State Laboratory (Middle Corridor)', description: 'Located in the middle corridor of the second floor (south side). This lab focuses on studying the physical properties of materials in their solid state.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Solid State Laboratory (Middle Corridor)' }] },
+        { name: 'Foucault Pendulum', description: 'Located in the middle corridor of the second floor (south side). This pendulum is used to visually demonstrate the rotation of the Earth.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Foucault Pendulum' }] }
       ]
     },
     { title: 'Lecture Halls', icon: '🏛️', description: 'Modern educational spaces for theoretical and specialized courses.',
       items: [
-        { name: 'Lecture Hall 1', description: "Located on the second floor, in the middle corridor's north section. Equipped with modern audio-visual equipment for specialized courses.", gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 1' }] },
-        { name: 'Lecture Hall 2', description: "Located on the second floor, in the middle corridor's north section. Equipped with modern audio-visual equipment for specialized courses.", gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 2' }] },
-        { name: 'Lecture Hall 3', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 3' }] },
-        { name: 'Lecture Hall 4', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 4' }] },
-        { name: 'Lecture Hall 5', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 5' }] },
-        { name: 'Lecture Hall 6', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 6' }] },
-        { name: 'Lecture Hall 7', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 7' }] },
-        { name: 'Lecture Hall 8', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 8' }] },
-        { name: 'Lecture Hall 9', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 9' }] },
-        { name: 'Lecture Hall 10', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 10' }] },
-        { name: 'Lecture Hall 11', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800', alt: 'Modern Lecture Hall 11' }] }
+        { name: 'Lecture Hall 1', description: "Located on the second floor, in the middle corridor's north section. Equipped with modern audio-visual equipment for specialized courses.", gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 1' }] },
+        { name: 'Lecture Hall 2', description: "Located on the second floor, in the middle corridor's north section. Equipped with modern audio-visual equipment for specialized courses.", gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 2' }] },
+        { name: 'Lecture Hall 3', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 3' }] },
+        { name: 'Lecture Hall 4', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 4' }] },
+        { name: 'Lecture Hall 5', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 5' }] },
+        { name: 'Lecture Hall 6', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 6' }] },
+        { name: 'Lecture Hall 7', description: 'Located on the ground floor, south corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 7' }] },
+        { name: 'Lecture Hall 8', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 8' }] },
+        { name: 'Lecture Hall 9', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 9' }] },
+        { name: 'Lecture Hall 10', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 10' }] },
+        { name: 'Lecture Hall 11', description: 'Located on the ground floor, north corridor. Equipped with modern audio-visual equipment for specialized courses.', gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Modern Lecture Hall 11' }] }
       ]
     },
     { title: 'Observatory', icon: '🔭', description: 'Observing the night sky and conducting astronomical projects with professional telescopes.',
@@ -859,7 +805,7 @@ The observatory's dome was entirely designed and built in Iran under the supervi
   - 2x 8-inch Celestron Newtonian reflectors
 - **Other Gear:** 1x astronomical photometer, 1x depreciated CCD imaging camera.
         `.trim(),
-          gallery: [ { src: 'https://images.unsplash.com/photo-1534289842477-2a29c1b5a8a1?q=80&w=800', alt: 'Close-up of the main observatory telescope' }, { src: 'https://images.unsplash.com/photo-1610479136279-d576a17f4115?q=80&w=800', alt: 'The observatory dome at night' } ]
+          gallery: [ { src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Close-up of the main observatory telescope' }, { src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'The observatory dome at night' } ]
         }
       ]
     },
@@ -870,44 +816,56 @@ The observatory's dome was entirely designed and built in Iran under the supervi
 - One Z840 system with two 12-core processors (24 cores total) and 64GB RAM.
 - Multiple systems with 2, 4, and 6-core processors and RAM ranging from 16GB to 64GB.
 The site is supported by two UPS units (10 kVA and 6 kVA) and two cooling units.`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1529336972124-31a834b6b1a8?q=80&w=800', alt: 'Students working in a computer lab' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Students working in a computer lab' }]
         },
         { name: 'High-Speed Processing Site (First Floor)',
           description: 'A dual-purpose site containing 10 high-speed processing systems for research calculations (6-core CPU, 8GB RAM) and 11 general-purpose systems with application software (6-core CPU, 4GB RAM).',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1556742044-53c2a1a6c0c2?q=80&w=800', alt: 'Computer room with multiple systems' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Computer room with multiple systems' }]
         },
         { name: 'Server Room & Computing Cluster (First Floor)',
           description: `The department's server room hosts the main computing cluster. This cluster consists of 5 Tyan-FT48 nodes, each with four 16-core AMD Opteron processors and 128GB of DDR3 RAM. Currently, 4 nodes operate in parallel under Linux, and one node provides virtualized services to students. Emergency power is supplied by a powerful 20 kVA UPS.`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1581092446337-23428277981f?q=80&w=800', alt: 'Server racks in a data center' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Server racks in a data center' }]
         },
         { name: 'Student Computational Site (First Floor)',
           description: `This site features 12 powerful systems specifically available for computational students. The system specifications are:
 - CPU: i9-12900kf
 - RAM: 64GB DDR4
 - H.D.D: 512GB SSD`,
-          gallery: [{ src: 'https://images.unsplash.com/photo-1614099232631-45569978182b?q=80&w=800', alt: 'Powerful computers for calculations' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Powerful computers for calculations' }]
         },
         { name: 'General Graduate Student Site (First Floor)',
           description: 'A general-purpose site with 12 computer systems, designed for general use by graduate students and for holding computer-based training classes.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800', alt: 'Computer classroom for students' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Computer classroom for students' }]
         },
         { name: 'Fiber Optic Room (Ground Floor)',
           description: 'Located on the ground floor, this room houses the main networking equipment and fiber optic infrastructure for the department.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1580894742597-87bc8789db3d?q=80&w=800', alt: 'Networking and fiber optic equipment' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Networking and fiber optic equipment' }]
         }
       ]
     },
     { title: 'Conference Halls', icon: '🎤', description: 'Hosting seminars, conferences, and scientific events.',
       items: [
         { name: 'Main Auditorium', description: 'The main conference hall of the department with a capacity of 200 people, equipped with advanced sound and video systems for weekly seminars, defenses, and national and international conferences.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800', alt: 'Large empty auditorium' }]
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Large empty auditorium' }]
         }
       ]
     },
     { title: 'Study Halls', icon: '📚', description: 'A quiet and suitable environment for students to study and research.',
       items: [
-        { name: 'Specialized Library', description: 'The Physics Department library contains a rich collection of books, journals, and digital resources in all branches of physics. Its study hall provides a quiet environment for concentration and research.',
-          gallery: [{ src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800', alt: 'Bookshelves in a library' }]
+        { 
+          name: 'Undergraduate Students Study Hall', 
+          description: 'Located on the ground floor, north corridor. This study hall provides a quiet and equipped space for undergraduate students.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Undergraduate Students Study Hall' }]
+        },
+        { 
+          name: 'Graduate (Female) Students Study Hall', 
+          description: 'Located on the second floor, middle corridor (south side). This space is exclusively designed for female graduate students.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'Graduate (Female) Students Study Hall' }]
+        },
+        { 
+          name: 'PhD and Post-doc Study Hall', 
+          description: 'Located on the third floor. This study hall offers a specialized and quiet environment for researchers and students at PhD and postdoctoral levels.',
+          gallery: [{ src: 'https://placehold.co/800x600/1f2937/94a3b8?text=Image+Coming+Soon', alt: 'PhD and Post-doc Study Hall' }]
         }
       ]
     }
@@ -918,8 +876,6 @@ The site is supported by two UPS units (10 kVA and 6 kVA) and two cooling units.
     heroButton: 'Enter 3D Tour',
     aboutTitle: 'Welcome to the World of Physics',
     aboutText: 'Our Department of Physics is one of the leading scientific centers in the country, dedicated to training the next generation of physicists and researchers with its distinguished faculty and modern research facilities. The department includes various sections such as theoretical physics, experimental physics, astronomy, and astrophysics.',
-    announcementsTitle: 'Latest News and Announcements',
-    announcementsSubtitle: 'Stay informed about the latest events and opportunities in the department.',
     sectionsTitle: 'Department Sections',
     sectionsSubtitle: 'Discover our educational and research facilities and spaces.',
     professorsTitle: 'Meet Our Professors',
@@ -959,9 +915,6 @@ Our Department of Physics is one of the leading scientific centers in the countr
 
 # Department Sections:
 {sectionsInfo}
-
-# Latest News and Announcements:
-{announcementInfo}
     `.trim(),
     systemInstruction: `
 You are a helpful and intelligent assistant for the Department of Physics.

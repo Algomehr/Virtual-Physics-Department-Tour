@@ -431,6 +431,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
       `Professor Name: ${p.name}\n` +
       `Specialization: ${p.area}\n` +
       `Email: ${p.contact.email}\n` +
+      `Office: ${p.contact.office}\n` +
       `Biography: ${p.bio}`
     )).join('\n---\n');
 
@@ -444,14 +445,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
       return `Section Title: ${s.title}\n${itemsDetail}`;
     }).join('\n---\n');
     
-    // Announcements remain the same high-level format.
-    const announcementInfo = t.announcements.map(a => `- ${a.title} (Date: ${a.date}).`).join('\n');
-
     // Replace placeholders in the main context string with the detailed information.
     return t.chatbot.context
       .replace('{profInfo}', profInfo)
-      .replace('{sectionsInfo}', sectionsInfo)
-      .replace('{announcementInfo}', announcementInfo);
+      .replace('{sectionsInfo}', sectionsInfo);
   }, [t]);
   
   return (
@@ -497,26 +494,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
           </section>
 
           <SectionDivider />
-
-          {/* Announcements Section */}
-          <section ref={animatedRef} className="py-20 bg-gray-800/50 rounded-xl animated-section" style={{transitionDelay: '200ms'}}>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-cyan-400">{home.announcementsTitle}</h2>
-              <p className="text-lg text-gray-400 mt-2">{home.announcementsSubtitle}</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {t.announcements.map((item, index) => (
-                <div key={index} className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-semibold text-xl text-white mb-2">{item.title}</h3>
-                  <p className="text-cyan-400">{item.date}</p>
-                </div>
-              ))}
-            </div>
-          </section>
           
-          <SectionDivider />
-
           {/* Department Sections */}
           <section ref={animatedRef} className="py-20 animated-section" style={{transitionDelay: '200ms'}}>
             <div className="text-center mb-12">

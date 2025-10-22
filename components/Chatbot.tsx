@@ -3,6 +3,8 @@ import { GoogleGenAI, Chat } from '@google/genai';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 
+declare const marked: any;
+
 interface Message {
   role: 'user' | 'model';
   text: string;
@@ -77,11 +79,80 @@ export const Chatbot: React.FC<ChatbotProps> = ({ context }) => {
 
   return (
     <div className="flex flex-col h-full bg-gray-700 rounded-lg flex-1">
+       <style>{`
+        .markdown-content ul, .markdown-content ol {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+        html[dir="ltr"] .markdown-content ul, html[dir="ltr"] .markdown-content ol {
+            padding-left: 1.5rem;
+        }
+        html[dir="rtl"] .markdown-content ul, html[dir="rtl"] .markdown-content ol {
+            padding-right: 1.5rem;
+        }
+        .markdown-content ul {
+          list-style-type: disc;
+        }
+        .markdown-content ol {
+          list-style-type: decimal;
+        }
+        .markdown-content a {
+          color: #67e8f9; /* cyan-300 */
+          text-decoration: underline;
+        }
+        .markdown-content a:hover {
+          color: #22d3ee; /* cyan-400 */
+        }
+        .markdown-content p {
+          margin-bottom: 0.5rem;
+        }
+        .markdown-content p:last-child {
+          margin-bottom: 0;
+        }
+        .markdown-content pre {
+            background-color: #1f2937; /* gray-800 */
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .markdown-content code {
+            background-color: #374151; /* gray-700 */
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .markdown-content th, .markdown-content td {
+            border: 1px solid #4b5563; /* gray-600 */
+            padding: 0.5rem;
+            text-align: inherit;
+        }
+        .markdown-content th {
+            background-color: #374151; /* gray-700 */
+        }
+      `}</style>
       <div className="flex-1 p-4 overflow-y-auto">
         {messages.map((msg, index) => (
           <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}>
             <div className={`max-w-xs md:max-w-md lg:max-w-lg px-4 py-2 rounded-xl ${msg.role === 'user' ? 'bg-cyan-600 text-white' : 'bg-gray-600 text-gray-200'}`}>
-              <p style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</p>
+              {msg.role === 'model' ? (
+                <div
+                  className="markdown-content"
+                  dangerouslySetInnerHTML={{ __html: marked.parse(msg.text) }}
+                />
+              ) : (
+                <p style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</p>
+              )}
             </div>
           </div>
         ))}
