@@ -588,6 +588,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
 
         </div>
       </main>
+
+      <footer className="bg-gray-900 py-8 text-center text-gray-400">
+          <p>
+            توسعه یافته توسط{' '}
+            <a 
+              href="https://mehrdad.netlify.app/"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-semibold text-cyan-400 hover:underline"
+            >
+              "مهرداد رجبی"
+            </a>
+          </p>
+      </footer>
       
       {selectedFloor && <MapModal floor={selectedFloor} onClose={() => setSelectedFloor(null)} t={modals} />}
       {selectedProfessor && <ProfessorModal professor={selectedProfessor} onClose={() => setSelectedProfessor(null)} t={modals} />}
