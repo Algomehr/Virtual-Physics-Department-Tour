@@ -178,10 +178,10 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
         setPubError(null);
 
         try {
-            if (!process.env.API_KEY) {
+            if (!process.env.GEMINI_API_KEY) {
                 throw new Error("API key is not configured.");
             }
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
             const responseSchema = {
                 type: Type.ARRAY,
