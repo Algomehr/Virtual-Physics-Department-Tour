@@ -1,4 +1,5 @@
 
+
 export interface Professor {
   name: string;
   area: string;
@@ -727,10 +728,10 @@ const en = {
     }
   ],
   floors: [
-    { name: 'Ground Floor', imageUrl: '/public/Floor one.png' },
-    { name: 'First Floor', imageUrl: '/public/Floor Two.png' },
-    { name: 'Second Floor', imageUrl: '/public/Floor Three.png' },
-    { name: 'Third Floor', imageUrl: '/public/Floor Four.png' },
+    { name: 'Ground Floor', imageUrl: '/Floor one.png' },
+    { name: 'First Floor', imageUrl: '/Floor Two.png' },
+    { name: 'Second Floor', imageUrl: '/Floor Three.png' },
+    { name: 'Third Floor', imageUrl: '/Floor Four.png' },
   ],
   departmentSections: [
     {

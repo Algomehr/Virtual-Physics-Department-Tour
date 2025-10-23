@@ -54,7 +54,7 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
     ground.receiveShadow = true;
     scene.add(ground);
     
-    const modelPath = '/public/Model.glb'; 
+    const modelPath = '/Model.glb'; 
     const loader = new THREE.GLTFLoader();
     
     loader.load(
@@ -79,14 +79,14 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
         scene.add(model);
         modelRef.current = model;
 
-        // ======================= شروع تغییرات =======================
+        // ======================= Start of Changes =======================
 
-        // مرحله ۱: محاسبه محدوده مدل (Bounding Box)
-        // یک کادر در بر گیرنده (Bounding Box) برای مدل ایجاد می‌کنیم تا ابعاد آن را بدانیم.
+        // Step 1: Calculate the model's bounding box
+        // We create a Bounding Box for the model to know its dimensions.
         const modelBoundingBox = new THREE.Box3().setFromObject(model);
-        const padding = 10; // یک فاصله اضافی دور مدل برای اینکه درخت‌ها خیلی نزدیک ساخته نشوند
+        const padding = 10; // An additional padding around the model so that trees are not generated too close
 
-        // محدوده ممنوعه را بر اساس ابعاد مدل و فاصله اضافی تعریف می‌کنیم
+        // We define the exclusion zone based on the model's dimensions and the padding
         const exclusionZone = {
           minX: modelBoundingBox.min.x - padding,
           maxX: modelBoundingBox.max.x + padding,
@@ -94,14 +94,14 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
           maxZ: modelBoundingBox.max.z + padding,
         };
         
-        // مرحله ۲: منطق ساخت درخت‌ها به اینجا منتقل شده است
+        // Step 2: The logic for creating trees has been moved here
         const trees = new THREE.Group();
         const treeTrunkGeometry = new THREE.CylinderGeometry(0.2, 0.3, 2, 8);
         const treeTrunkMaterial = new THREE.MeshStandardMaterial({ color: 0x8B4513 });
         const treeFoliageGeometry = new THREE.ConeGeometry(1.5, 4, 8);
         const treeFoliageMaterial = new THREE.MeshStandardMaterial({ color: 0x006400 });
 
-        // مرحله ۳: اصلاح حلقه ساخت درخت‌ها
+        // Step 3: Modify the tree creation loop
         for (let i = 0; i < 200; i++) {
             const trunk = new THREE.Mesh(treeTrunkGeometry, treeTrunkMaterial);
             trunk.position.y = 1;
@@ -115,19 +115,19 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
 
             let x, z, isInsideExclusionZone;
             
-            // یک حلقه while ایجاد می‌کنیم تا زمانی که یک موقعیت مناسب (خارج از محدوده مدل) پیدا شود
+            // We create a while loop to find a suitable position (outside the model's range)
             do {
                 x = (Math.random() - 0.5) * 480;
                 z = (Math.random() - 0.5) * 480;
 
-                // چک می‌کنیم که آیا موقعیت تولید شده داخل محدوده ممنوعه است یا نه
+                // We check if the generated position is inside the exclusion zone or not
                 isInsideExclusionZone = 
                     x > exclusionZone.minX && x < exclusionZone.maxX &&
                     z > exclusionZone.minZ && z < exclusionZone.maxZ;
 
-            } while (isInsideExclusionZone || (Math.abs(x) < 10 && Math.abs(z) < 10)); // موقعیت‌های خیلی نزدیک به مرکز را هم حذف می‌کنیم
+            } while (isInsideExclusionZone || (Math.abs(x) < 10 && Math.abs(z) < 10)); // We also exclude positions that are too close to the center
 
-            tree.position.set(x, 0, z); // موقعیت معتبر را تنظیم می‌کنیم
+            tree.position.set(x, 0, z); // We set the valid position
             
             const scale = Math.random() * 0.5 + 0.75;
             tree.scale.set(scale, scale, scale);
@@ -135,7 +135,7 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
         }
         scene.add(trees);
 
-        // ======================= پایان تغییرات =======================
+        // ======================= End of Changes =======================
       },
       (xhr: any) => {
         if (xhr.total > 0) {
@@ -158,29 +158,29 @@ export const Scene = forwardRef<HTMLCanvasElement, SceneProps>(({ camera, update
     );
 
     //Lights
-    // یک لامپ در طبقه اول
-    const pointLight_1 = new THREE.PointLight('white', 2, 25); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_1.position.set(1, 5, -10); // موقعیت لامپ در داخل ساختمان
+    // A lamp on the first floor
+    const pointLight_1 = new THREE.PointLight('white', 2, 25); // Warm color, intensity 1, range 100 units
+    pointLight_1.position.set(1, 5, -10); // Lamp position inside the building
     scene.add(pointLight_1);
 
-    const pointLight_2 = new THREE.PointLight('white', 2, 25); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_2.position.set(20, 5, -30); // موقعیت لامپ در داخل ساختمان
+    const pointLight_2 = new THREE.PointLight('white', 2, 25); // Warm color, intensity 1, range 100 units
+    pointLight_2.position.set(20, 5, -30); // Lamp position inside the building
     scene.add(pointLight_2);
 
-    const pointLight_3 = new THREE.PointLight('white', 2, 25); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_3.position.set(-20, 5, -30); // موقعیت لامپ در داخل ساختمان
+    const pointLight_3 = new THREE.PointLight('white', 2, 25); // Warm color, intensity 1, range 100 units
+    pointLight_3.position.set(-20, 5, -30); // Lamp position inside the building
     scene.add(pointLight_3);
 
-    const pointLight_4 = new THREE.PointLight('white', 2, 25); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_4.position.set(1, 35, -10); // موقعیت لامپ در داخل ساختمان
+    const pointLight_4 = new THREE.PointLight('white', 2, 25); // Warm color, intensity 1, range 100 units
+    pointLight_4.position.set(1, 35, -10); // Lamp position inside the building
     scene.add(pointLight_4);
 
-    const pointLight_5 = new THREE.PointLight('white', 2, 50); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_5.position.set(20, 35, -18); // موقعیت لامپ در داخل ساختمان
+    const pointLight_5 = new THREE.PointLight('white', 2, 50); // Warm color, intensity 1, range 100 units
+    pointLight_5.position.set(20, 35, -18); // Lamp position inside the building
     scene.add(pointLight_5);
 
-    const pointLight_6 = new THREE.PointLight('white', 2, 50); // رنگ گرم، شدت ۱، برد ۱۰۰ واحد
-    pointLight_6.position.set(-20, 35, -18); // موقعیت لامپ در داخل ساختمان
+    const pointLight_6 = new THREE.PointLight('white', 2, 50); // Warm color, intensity 1, range 100 units
+    pointLight_6.position.set(-20, 35, -18); // Lamp position inside the building
     scene.add(pointLight_6);
 
     // Animation loop
