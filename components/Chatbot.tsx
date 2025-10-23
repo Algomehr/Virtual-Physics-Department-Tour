@@ -24,9 +24,12 @@ export const Chatbot: React.FC<ChatbotProps> = ({ context }) => {
   const t = translations[language].chatbot;
 
   useEffect(() => {
-    const initializeChat = async () => {
+    const initializeChat = () => {
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+        if (!process.env.API_KEY) {
+          throw new Error("API_KEY environment variable not set. The chatbot cannot be initialized.");
+        }
+        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
         const systemInstruction = t.systemInstruction.replace('{context}', context);
 
@@ -46,8 +49,7 @@ export const Chatbot: React.FC<ChatbotProps> = ({ context }) => {
     if (context) {
         initializeChat();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [context, t]);
+  }, [context, t.systemInstruction, t.initialMessage, t.errorMessage]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
