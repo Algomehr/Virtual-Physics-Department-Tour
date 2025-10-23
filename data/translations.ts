@@ -269,10 +269,10 @@ const fa = {
       }
   ],
   floors: [
-      { name: 'طبقه همکف', imageUrl: '/public/Floor one.png' },
-      { name: 'طبقه اول', imageUrl: '/public/Floor Two.png' },
-      { name: 'طبقه دوم', imageUrl: '/public/Floor Three.png' },
-      { name: 'طبقه سوم', imageUrl: '/public/Floor Four.png' },
+      { name: 'طبقه همکف', imageUrl: '/Floor one.png' },
+      { name: 'طبقه اول', imageUrl: '/Floor Two.png' },
+      { name: 'طبقه دوم', imageUrl: '/Floor Three.png' },
+      { name: 'طبقه سوم', imageUrl: '/Floor Four.png' },
   ],
   departmentSections: [
     {
