@@ -178,9 +178,6 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
         setPubError(null);
 
         try {
-            if (!process.env.GEMINI_API_KEY) {
-                throw new Error("API key is not configured.");
-            }
             const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
             const responseSchema = {
@@ -591,14 +588,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onEnterWorld }) => {
       
       <footer className="bg-gray-900 py-8 text-center text-gray-400">
           <p>
-            {home.footer.developedBy}{' '}
+            توسعه یافته توسط{' '}
             <a 
-              href={home.footer.developerLink}
+              href="https://mehrdad.netlify.app/"
               target="_blank" 
               rel="noopener noreferrer" 
               className="font-semibold text-cyan-400 hover:underline"
             >
-              {home.footer.developerName}
+              "مهرداد رجبی"
             </a>
           </p>
       </footer>
