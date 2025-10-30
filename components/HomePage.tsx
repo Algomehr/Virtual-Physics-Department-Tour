@@ -178,7 +178,7 @@ const ProfessorModal: React.FC<{ professor: Professor; onClose: () => void, t: a
         setPubError(null);
 
         try {
-            const ai = new GoogleGenAI({ apiKey: AIzaSyDOtnQeWkNri6Dskh7yO29kvL6Dv8aDIZ8 });
+            const ai = new GoogleGenAI({ apiKey: "AIzaSyADAr60cvvOZPOh8XSD9-LMGMm0Yny1QZI" });
 
             const responseSchema = {
                 type: Type.ARRAY,
