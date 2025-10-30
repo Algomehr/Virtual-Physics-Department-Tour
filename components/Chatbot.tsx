@@ -26,7 +26,7 @@ export const Chatbot: React.FC<ChatbotProps> = ({ context }) => {
   useEffect(() => {
     const initializeChat = () => {
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+        const ai = new GoogleGenAI({ apiKey: AIzaSyDOtnQeWkNri6Dskh7yO29kvL6Dv8aDIZ8 });
 
         const systemInstruction = t.systemInstruction.replace('{context}', context);
 
