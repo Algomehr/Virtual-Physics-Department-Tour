@@ -26,6 +26,9 @@ export const Chatbot: React.FC<ChatbotProps> = ({ context }) => {
   useEffect(() => {
     const initializeChat = () => {
       try {
+        if (!process.env.GEMINI_API_KEY) {
+          throw new Error("API_KEY environment variable not set. The chatbot cannot be initialized.");
+        }
         const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
         const systemInstruction = t.systemInstruction.replace('{context}', context);
